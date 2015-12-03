@@ -6,10 +6,11 @@ def recurs(l):
     n=len(l)
     if n==1:
         return l[0]
-    
+        
     k=(n//2)    
     left_sum,right_sum = l[k-1],l[k]
     s_g,s_d=0,0
+    
     for i in range(k,n):
         s_d+=l[i]
         if s_d < right_sum:
@@ -20,6 +21,7 @@ def recurs(l):
             left_sum = s_g
     
     return min(recurs(l[0:k]),recurs(l[k:n]),left_sum+right_sum)
+
 
 def lineaire(l):
     c=l[0]
