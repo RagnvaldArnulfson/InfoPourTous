@@ -13,7 +13,7 @@ def recurs(l):
     a2=recurs(l[k:n])
     
     left_sum,right_sum = l[k-1],l[k]
-    s_g,s_d=l[k-1],l[k]
+    s_g,s_d=0,0
 
     for i in range(k,n):
         s_d+=l[i]
