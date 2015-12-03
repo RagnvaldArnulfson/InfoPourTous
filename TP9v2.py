@@ -17,11 +17,12 @@ def recurs(l):
 
     for i in range(k,n):
         s_d+=l[i]
-        s_g+=l[n-i-1-(n%2)]
         if s_d < right_sum:
             right_sum = s_d
-        if s_g < left_sum:
-            left_sum = s_g
+        if n-i-1-(n%2)>=0:
+            s_g+=l[n-i-1-(n%2)]
+            if s_g < left_sum:
+                left_sum = s_g
     
     return min(a1,a2,left_sum+right_sum)
 
